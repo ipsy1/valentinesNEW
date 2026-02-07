@@ -412,7 +412,12 @@ const getProgress = () => {
     let saved = localStorage.getItem('valentineProgress');
 
     if (!saved) {
-        const freshProgress = {
+const getProgress = () => {
+    const saved = localStorage.getItem('valentineProgress');
+
+    let progress = saved
+        ? JSON.parse(saved)
+        : {
             days: [
                 { id: 1, name: "Rose Day", date: "Feb 7", unlocked: true, completed: false },
                 { id: 2, name: "Propose Day", date: "Feb 8", unlocked: true, completed: false },
@@ -426,34 +431,39 @@ const getProgress = () => {
             replayMode: true
         };
 
-        localStorage.setItem('valentineProgress', JSON.stringify(freshProgress));
-        return freshProgress;
-    }
+    // 🔓 FORCE UNLOCK — locking is now visual only
+    progress.days = progress.days.map(d => ({ ...d, unlocked: true }));
+    progress.replayMode = true;
 
-    return JSON.parse(saved);
+    localStorage.setItem('valentineProgress', JSON.stringify(progress));
+    return progress;
 };
+
 
         const saveProgress = (progress) => {
             localStorage.setItem('valentineProgress', JSON.stringify(progress));
         };
 
-        const completeDay = (dayId, progress) => {
-            const newProgress = { ...progress };
-            newProgress.days[dayId - 1].completed = true;
-            
-            if (dayId < 8) {
-                newProgress.days[dayId].unlocked = true;
-            }
-            
-            const allCompleted = newProgress.days.every(d => d.completed);
-            if (allCompleted) {
-                newProgress.replayMode = true;
-                newProgress.days.forEach(d => d.unlocked = true);
-            }
-            
-            saveProgress(newProgress);
-            return newProgress;
-        };
+const completeDay = (dayId, progress) => {
+    const newProgress = { ...progress };
+
+    newProgress.days = newProgress.days.map(day =>
+        day.id === dayId
+            ? { ...day, completed: true }
+            : day
+    );
+
+    // 🔓 keep everything unlocked forever
+    newProgress.days = newProgress.days.map(d => ({
+        ...d,
+        unlocked: true
+    }));
+
+    newProgress.replayMode = true;
+
+    saveProgress(newProgress);
+    return newProgress;
+};
 
         // Main App Component
         function App() {

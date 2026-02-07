@@ -208,6 +208,20 @@ const styles = StyleSheet.create({
     marginTop: 20,
     textAlign: "center",
   },
+  loadingContainer: {
+    width: PIECE_SIZE * 3,
+    height: PIECE_SIZE * 3,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#1a1a1a",
+    borderRadius: 12,
+    borderWidth: 3,
+    borderColor: "#FFC0CB",
+  },
+  loadingText: {
+    color: "#FFC0CB",
+    fontSize: 16,
+  },
   modalOverlay: {
     flex: 1,
     backgroundColor: "rgba(0, 0, 0, 0.9)",

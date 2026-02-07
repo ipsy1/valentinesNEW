@@ -81,37 +81,43 @@ export default function Day4() {
       <View style={styles.gameContainer}>
         <Text style={styles.instructions}>Solve the jigsaw puzzle! 🧩</Text>
         
-        <View style={styles.puzzleContainer}>
-          {pieces.map((pieceNumber, index) => {
-            const pieceRow = Math.floor(pieceNumber / 3);
-            const pieceCol = pieceNumber % 3;
+        {!imageLoaded ? (
+          <View style={styles.loadingContainer}>
+            <Text style={styles.loadingText}>Loading puzzle...</Text>
+          </View>
+        ) : (
+          <View style={styles.puzzleContainer}>
+            {pieces.map((pieceNumber, index) => {
+              const pieceRow = Math.floor(pieceNumber / 3);
+              const pieceCol = pieceNumber % 3;
 
-            return (
-              <TouchableOpacity
-                key={index}
-                style={[
-                  styles.puzzlePiece,
-                  selectedIndex === index && styles.selectedPiece,
-                ]}
-                onPress={() => handlePiecePress(index)}
-              >
-                <Image
-                  source={{ uri: PUZZLE_IMAGE }}
+              return (
+                <TouchableOpacity
+                  key={`piece-${index}`}
                   style={[
-                    styles.pieceImage,
-                    {
-                      width: PIECE_SIZE * 3,
-                      height: PIECE_SIZE * 3,
-                      left: -pieceCol * PIECE_SIZE,
-                      top: -pieceRow * PIECE_SIZE,
-                    },
+                    styles.puzzlePiece,
+                    selectedIndex === index && styles.selectedPiece,
                   ]}
-                  resizeMode="cover"
-                />
-              </TouchableOpacity>
-            );
-          })}
-        </View>
+                  onPress={() => handlePiecePress(index)}
+                >
+                  <Image
+                    source={{ uri: PUZZLE_IMAGE }}
+                    style={[
+                      styles.pieceImage,
+                      {
+                        width: PIECE_SIZE * 3,
+                        height: PIECE_SIZE * 3,
+                        left: -pieceCol * PIECE_SIZE,
+                        top: -pieceRow * PIECE_SIZE,
+                      },
+                    ]}
+                    resizeMode="cover"
+                  />
+                </TouchableOpacity>
+              );
+            })}
+          </View>
+        )}
 
         <Text style={styles.hint}>Tap two pieces to swap them!</Text>
       </View>

@@ -408,39 +408,31 @@
         const { useState, useEffect } = React;
 
         // Utility functions
-       const getProgress = () => {
-    const defaultProgress = {
-        days: [
-            { id: 1, name: "Rose Day", date: "Feb 7", unlocked: true, completed: false },
-            { id: 2, name: "Propose Day", date: "Feb 8", unlocked: false, completed: false },
-            { id: 3, name: "Chocolate Day", date: "Feb 9", unlocked: false, completed: false },
-            { id: 4, name: "Teddy Day", date: "Feb 10", unlocked: false, completed: false },
-            { id: 5, name: "Promise Day", date: "Feb 11", unlocked: false, completed: false },
-            { id: 6, name: "Hug Day", date: "Feb 12", unlocked: false, completed: false },
-            { id: 7, name: "Kiss Day", date: "Feb 13", unlocked: false, completed: false },
-            { id: 8, name: "Valentine's Day", date: "Feb 14", unlocked: false, completed: false },
-        ],
-        replayMode: false
-    };
+const getProgress = () => {
+    let saved = localStorage.getItem('valentineProgress');
 
-    try {
-        const saved = JSON.parse(localStorage.getItem('valentineProgress'));
+    if (!saved) {
+        const freshProgress = {
+            days: [
+                { id: 1, name: "Rose Day", date: "Feb 7", unlocked: true, completed: false },
+                { id: 2, name: "Propose Day", date: "Feb 8", unlocked: true, completed: false },
+                { id: 3, name: "Chocolate Day", date: "Feb 9", unlocked: true, completed: false },
+                { id: 4, name: "Teddy Day", date: "Feb 10", unlocked: true, completed: false },
+                { id: 5, name: "Promise Day", date: "Feb 11", unlocked: true, completed: false },
+                { id: 6, name: "Hug Day", date: "Feb 12", unlocked: true, completed: false },
+                { id: 7, name: "Kiss Day", date: "Feb 13", unlocked: true, completed: false },
+                { id: 8, name: "Valentine's Day", date: "Feb 14", unlocked: true, completed: false },
+            ],
+            replayMode: true
+        };
 
-        // 🚑 SAFETY CHECK
-        if (!saved || !saved.days || saved.days.length !== 8) {
-            localStorage.setItem('valentineProgress', JSON.stringify(defaultProgress));
-            return defaultProgress;
-        }
-
-        // 🧠 Ensure at least Day 1 is unlocked
-        saved.days[0].unlocked = true;
-
-        return saved;
-    } catch (e) {
-        localStorage.setItem('valentineProgress', JSON.stringify(defaultProgress));
-        return defaultProgress;
+        localStorage.setItem('valentineProgress', JSON.stringify(freshProgress));
+        return freshProgress;
     }
+
+    return JSON.parse(saved);
 };
+
         const saveProgress = (progress) => {
             localStorage.setItem('valentineProgress', JSON.stringify(progress));
         };

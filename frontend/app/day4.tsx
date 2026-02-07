@@ -27,6 +27,14 @@ export default function Day4() {
   const [pieces, setPieces] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8].sort(() => Math.random() - 0.5));
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [showResult, setShowResult] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  useEffect(() => {
+    // Preload the image
+    Image.prefetch(PUZZLE_IMAGE).then(() => {
+      setImageLoaded(true);
+    });
+  }, []);
 
   const handlePiecePress = (index: number) => {
     if (selectedIndex === null) {

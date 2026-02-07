@@ -529,8 +529,8 @@ const completeDay = (dayId, progress) => {
                         {progress.days.map((day, index) => (
                             <div
                                 key={day.id}
-                                className={`day-card ${!day.unlocked ? 'locked' : ''} ${day.completed ? 'completed' : ''}`}
-                                onClick={() => onDayClick(day)}
+                                className={`day-card ${day.completed ? 'completed' : ''} ${!day.unlocked ? 'locked' : ''}`}
+                                onClick={() => onDayClick({ ...day, unlocked: true })}
                             >
                                 <div className="day-icon">
                                     {day.unlocked ? dayIcons[index] : '🔒'}

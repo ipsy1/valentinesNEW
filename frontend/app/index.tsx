@@ -97,7 +97,7 @@ export default function Index() {
                     !isUnlocked
                       ? ["#2a2a2a", "#1a1a1a"]
                       : isCompleted
-                      ? ["#FFC0CB", "#C71585"]
+                      ? ["#FFC0CB", "#FF85B3"]
                       : ["#3d1a2e", "#2d0a1f"]
                   }
                   style={styles.cardGradient}

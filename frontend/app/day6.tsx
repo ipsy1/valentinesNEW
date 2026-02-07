@@ -116,7 +116,7 @@ export default function Day6() {
       <Modal visible={showResult} transparent animationType="fade">
         <View style={styles.modalOverlay}>
           <LinearGradient
-            colors={["#FFC0CB", "#C71585"]}
+            colors={["#FFC0CB", "#FF85B3"]}
             style={styles.resultContainer}
           >
             <Text style={styles.resultEmoji}>🤗✨</Text>

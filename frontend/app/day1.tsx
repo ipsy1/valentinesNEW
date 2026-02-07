@@ -66,7 +66,7 @@ export default function Day1() {
     <View style={styles.container}>
       <LinearGradient colors={["#1a1a1a", "#2d0a1f"]} style={styles.header}>
         <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
-          <Ionicons name="arrow-back" size={28} color="#C71585" />
+          <Ionicons name="arrow-back" size={28} color="#FF85B3" />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>🌹 Rose Day</Text>
         <Text style={styles.progress}>{foundRoses.length} / {ROSES.length}</Text>
@@ -113,7 +113,7 @@ export default function Day1() {
       >
         <View style={styles.modalOverlay}>
           <LinearGradient
-            colors={["#FFC0CB", "#C71585"]}
+            colors={["#FFC0CB", "#FF85B3"]}
             style={styles.resultContainer}
           >
             <Text style={styles.resultEmoji}>🌹✨</Text>

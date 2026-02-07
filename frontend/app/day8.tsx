@@ -41,7 +41,7 @@ export default function Day8() {
         style={styles.content}
       >
         <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
-          <Ionicons name="arrow-back" size={28} color="#C71585" />
+          <Ionicons name="arrow-back" size={28} color="#FF85B3" />
         </TouchableOpacity>
 
         <View style={styles.mainContent}>
@@ -60,7 +60,7 @@ export default function Day8() {
 
           <TouchableOpacity style={styles.revealButton} onPress={handleReveal}>
             <LinearGradient
-              colors={["#FFC0CB", "#C71585"]}
+              colors={["#FFC0CB", "#FF85B3"]}
               style={styles.buttonGradient}
             >
               <Text style={styles.revealButtonText}>Reveal My Gift 🎁</Text>
@@ -73,7 +73,7 @@ export default function Day8() {
       <Modal visible={showResult} transparent animationType="fade">
         <View style={styles.modalOverlay}>
           <LinearGradient
-            colors={["#FFC0CB", "#C71585", "#8B0040"]}
+            colors={["#FFC0CB", "#FF85B3", "#8B0040"]}
             style={styles.resultContainer}
           >
             <Text style={styles.resultEmoji}>💖✨💕</Text>

@@ -175,10 +175,14 @@ const styles = StyleSheet.create({
   heartsContainer: {
     flex: 1,
     position: "relative",
-    backgroundColor: "#1a1a1a",
     borderRadius: 16,
     borderWidth: 3,
-    borderColor: "#FF1493",
+    borderColor: "#FFC0CB",
+    overflow: "hidden",
+  },
+  overlay: {
+    flex: 1,
+    backgroundColor: "rgba(0, 0, 0, 0.3)",
   },
   heart: {
     position: "absolute",

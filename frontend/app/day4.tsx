@@ -198,7 +198,7 @@ const styles = StyleSheet.create({
   },
   hint: {
     fontSize: 14,
-    color: "#FFB6D9",
+    color: "#FFD1DC",
     marginTop: 20,
     textAlign: "center",
   },

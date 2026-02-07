@@ -37,7 +37,7 @@ export default function Day8() {
   return (
     <View style={styles.container}>
       <LinearGradient
-        colors={["#FFE5F0", "#FFB6D9", "#FF85B3"]}
+        colors={["#FFE5F0", "#FFD1DC", "#FF85B3"]}
         style={styles.content}
       >
         <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: 20,
-    color: "#FFB6D9",
+    color: "#FFD1DC",
     fontWeight: "600",
     marginBottom: 40,
   },

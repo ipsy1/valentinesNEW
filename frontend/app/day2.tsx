@@ -207,7 +207,7 @@ const styles = StyleSheet.create({
   },
   progress: {
     fontSize: 18,
-    color: "#FFB6D9",
+    color: "#FFD1DC",
     fontWeight: "600",
     marginTop: 8,
   },

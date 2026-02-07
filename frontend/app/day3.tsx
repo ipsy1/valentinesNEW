@@ -194,7 +194,7 @@ const styles = StyleSheet.create({
   },
   statText: {
     fontSize: 18,
-    color: "#FFB6D9",
+    color: "#FFD1DC",
     fontWeight: "600",
   },
   gameArea: {

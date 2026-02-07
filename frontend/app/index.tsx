@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: 18,
-    color: "#FFB6D9",
+    color: "#FFD1DC",
     fontWeight: "600",
     fontStyle: "italic",
   },
@@ -239,7 +239,7 @@ const styles = StyleSheet.create({
   },
   dayDate: {
     fontSize: 16,
-    color: "#FFB6D9",
+    color: "#FFD1DC",
   },
   dayDateLocked: {
     color: "#555555",
@@ -257,7 +257,7 @@ const styles = StyleSheet.create({
   },
   footerText: {
     fontSize: 14,
-    color: "#FFB6D9",
+    color: "#FFD1DC",
     textAlign: "center",
     fontWeight: "600",
   },

@@ -148,7 +148,7 @@ export default function Day3() {
       <Modal visible={showResult} transparent animationType="fade">
         <View style={styles.modalOverlay}>
           <LinearGradient
-            colors={["#FF69B4", "#FF1493"]}
+            colors={["#FF1493", "#C71585"]}
             style={styles.resultContainer}
           >
             <Text style={styles.resultEmoji}>🍫✨</Text>

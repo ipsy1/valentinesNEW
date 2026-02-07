@@ -415,29 +415,28 @@ const getProgress = () => {
 const getProgress = () => {
     const saved = localStorage.getItem('valentineProgress');
 
-    let progress = saved
-        ? JSON.parse(saved)
-        : {
-            days: [
-                { id: 1, name: "Rose Day", date: "Feb 7", unlocked: true, completed: false },
-                { id: 2, name: "Propose Day", date: "Feb 8", unlocked: true, completed: false },
-                { id: 3, name: "Chocolate Day", date: "Feb 9", unlocked: true, completed: false },
-                { id: 4, name: "Teddy Day", date: "Feb 10", unlocked: true, completed: false },
-                { id: 5, name: "Promise Day", date: "Feb 11", unlocked: true, completed: false },
-                { id: 6, name: "Hug Day", date: "Feb 12", unlocked: true, completed: false },
-                { id: 7, name: "Kiss Day", date: "Feb 13", unlocked: true, completed: false },
-                { id: 8, name: "Valentine's Day", date: "Feb 14", unlocked: true, completed: false },
-            ],
-            replayMode: true
-        };
+    const freshProgress = {
+        days: [
+            { id: 1, name: "Rose Day", date: "Feb 7", unlocked: true, completed: false },
+            { id: 2, name: "Propose Day", date: "Feb 8", unlocked: true, completed: false },
+            { id: 3, name: "Chocolate Day", date: "Feb 9", unlocked: true, completed: false },
+            { id: 4, name: "Teddy Day", date: "Feb 10", unlocked: true, completed: false },
+            { id: 5, name: "Promise Day", date: "Feb 11", unlocked: true, completed: false },
+            { id: 6, name: "Hug Day", date: "Feb 12", unlocked: true, completed: false },
+            { id: 7, name: "Kiss Day", date: "Feb 13", unlocked: true, completed: false },
+            { id: 8, name: "Valentine's Day", date: "Feb 14", unlocked: true, completed: false },
+        ],
+        replayMode: true
+    };
 
-    // 🔓 FORCE UNLOCK — locking is now visual only
-    progress.days = progress.days.map(d => ({ ...d, unlocked: true }));
-    progress.replayMode = true;
+    if (!saved) {
+        localStorage.setItem('valentineProgress', JSON.stringify(freshProgress));
+        return freshProgress;
+    }
 
-    localStorage.setItem('valentineProgress', JSON.stringify(progress));
-    return progress;
+    return JSON.parse(saved);
 };
+
 
 
         const saveProgress = (progress) => {

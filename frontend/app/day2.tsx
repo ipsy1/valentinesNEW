@@ -187,7 +187,7 @@ export default function Day2() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFE5F0",
+    backgroundColor: "#000000",
   },
   header: {
     paddingTop: 50,

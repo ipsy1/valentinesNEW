@@ -107,7 +107,7 @@ export default function Day6() {
       <Modal visible={showResult} transparent animationType="fade">
         <View style={styles.modalOverlay}>
           <LinearGradient
-            colors={["#FF69B4", "#FF1493"]}
+            colors={["#FF1493", "#C71585"]}
             style={styles.resultContainer}
           >
             <Text style={styles.resultEmoji}>🤗✨</Text>
@@ -128,7 +128,7 @@ export default function Day6() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFE5F0",
+    backgroundColor: "#000000",
   },
   header: {
     paddingTop: 50,
@@ -144,11 +144,11 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 28,
     fontWeight: "bold",
-    color: "#C71585",
+    color: "#FF1493",
   },
   progress: {
     fontSize: 18,
-    color: "#8B0040",
+    color: "#FFB6D9",
     fontWeight: "600",
     marginTop: 8,
   },
@@ -158,34 +158,40 @@ const styles = StyleSheet.create({
   },
   instructions: {
     fontSize: 18,
-    color: "#C71585",
+    color: "#FF69B4",
     textAlign: "center",
     fontWeight: "600",
     marginBottom: 20,
   },
-  canvasContainer: {
+  heartsContainer: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    position: "relative",
+    backgroundColor: "#1a1a1a",
     borderRadius: 16,
     borderWidth: 3,
-    borderColor: "#FF69B4",
-    overflow: "hidden",
+    borderColor: "#FF1493",
   },
-  resetButton: {
-    marginTop: 16,
-    backgroundColor: "#FF1493",
-    paddingVertical: 12,
-    borderRadius: 30,
+  heart: {
+    position: "absolute",
+    width: 60,
+    height: 60,
     alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "rgba(255, 20, 147, 0.2)",
+    borderRadius: 30,
+    borderWidth: 2,
+    borderColor: "#FF1493",
   },
-  resetButtonText: {
-    color: "#FFFFFF",
-    fontSize: 18,
-    fontWeight: "bold",
+  heartCollected: {
+    backgroundColor: "rgba(255, 215, 0, 0.3)",
+    borderColor: "#FFD700",
+  },
+  heartEmoji: {
+    fontSize: 40,
   },
   modalOverlay: {
     flex: 1,
-    backgroundColor: "rgba(0, 0, 0, 0.7)",
+    backgroundColor: "rgba(0, 0, 0, 0.9)",
     alignItems: "center",
     justifyContent: "center",
   },

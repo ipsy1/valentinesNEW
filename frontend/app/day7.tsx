@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
   },
   progress: {
     fontSize: 18,
-    color: "#8B0040",
+    color: "#FFB6D9",
     fontWeight: "600",
     marginTop: 8,
   },
@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
   },
   questionText: {
     fontSize: 22,
-    color: "#8B0040",
+    color: "#FFB6D9",
     fontWeight: "bold",
     textAlign: "center",
     marginBottom: 30,

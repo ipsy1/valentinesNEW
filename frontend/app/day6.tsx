@@ -7,6 +7,7 @@ import {
   Dimensions,
   Alert,
   Modal,
+  ImageBackground,
 } from "react-native";
 import { useRouter } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
@@ -14,6 +15,8 @@ import { Ionicons } from "@expo/vector-icons";
 import { api } from "../utils/api";
 
 const { width } = Dimensions.get("window");
+
+const BACKGROUND_IMAGE = "https://customer-assets.emergentagent.com/job_8ffa4a81-fe77-48cf-a350-8087a11b91ca/artifacts/pvx5t9ki_WhatsApp%20Image%202026-02-07%20at%2011.35.34%20AM%20%281%29.jpeg";
 
 // Generate random heart positions
 const generateHearts = () => {
